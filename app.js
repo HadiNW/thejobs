@@ -11,7 +11,23 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 // app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('jobseeker/')
+})
+
+app.get('/job-search', (req, res) => {
+    res.render('jobseeker/job/')
+})
+
+app.get('/profile', (req, res) => {
+    res.render('jobseeker/profile/')
+})
+
+app.get('/profile/update', (req, res) => {
+    res.render('jobseeker/profile/update')
+})
+
+app.get('/companies',(req, res) => {
+    res.render('jobseeker/companies/')
 })
 
 const port = 8000

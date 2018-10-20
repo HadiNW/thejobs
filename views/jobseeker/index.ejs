@@ -1,32 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Post a job position or create your online resume by TheJobs!">
-    <meta name="keywords" content="">
-
-    <title>The Jobs</title>
-
-    <!-- Styles -->
-    <link href="http://localhost:8000/static/assets/css/app.min.css" rel="stylesheet">
-    <link href="http://localhost:8000/static/assets/css/custom.css" rel="stylesheet">
-
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" href="http://localhost:8000/static/assets/img/favicon.ico">
-  </head>
+ <%- include('partials/header')%>
 
   <body class="nav-on-header smart-nav">
 
-    <!-- Navigation bar -->
-    <%-include('partials/header') %>
+    <%-include('partials/menu') %>
 
-    <!-- Site header -->
     <header class="site-header size-lg text-center" style="background-image: url(http://localhost:8000/static/assets/img/bg-banner1.jpg)">
       <div class="container">
         <div class="col-xs-12">
@@ -52,10 +31,7 @@
 
       </div>
     </header>
-    <!-- END Site header -->
-
-
-    <!-- Main container -->
+  
     <main>
 
 
@@ -80,7 +56,7 @@
                     <h5>Google</h5>
                   </div>
                   <div class="header-meta">
-                    <span class="location">Menlo park, CA</span>
+                    <span class="location">Malang, Jawa Timur</span>
                     <span class="label label-success">Full-time</span>
                   </div>
                 </header>
@@ -99,7 +75,7 @@
                     <h5>Linkedin</h5>
                   </div>
                   <div class="header-meta">
-                    <span class="location">Livermore, CA</span>
+                    <span class="location">Jakarta Selatan, Jakarta</span>
                     <span class="label label-warning">Part-time</span>
                   </div>
                 </header>
@@ -117,7 +93,7 @@
                     <h5>Envato</h5>
                   </div>
                   <div class="header-meta">
-                    <span class="location">San Francisco, CA</span>
+                    <span class="location">Bandung</span>
                     <span class="label label-info">Freelance</span>
                   </div>
                 </header>
@@ -135,7 +111,7 @@
                     <h5>Facebook</h5>
                   </div>
                   <div class="header-meta">
-                    <span class="location">Lexington, MA</span>
+                    <span class="location">Makasar</span>
                     <span class="label label-danger">Internship</span>
                   </div>
                 </header>
@@ -153,7 +129,7 @@
                     <h5>Microsoft</h5>
                   </div>
                   <div class="header-meta">
-                    <span class="location">Palo Alto, CA</span>
+                    <span class="location">Denpasar</span>
                     <span class="label label-success">Remote</span>
                   </div>
                 </header>
@@ -199,34 +175,6 @@
         </div>
       </section>
       <!-- END Facts -->
-
-
-      <!-- How it works -->
-      <section>
-        <div class="container">
-
-          <div class="col-sm-12 col-md-6">
-            <header class="section-header text-left">
-              <span>Workflow</span>
-              <h2>How it works</h2>
-            </header>
-
-            <p class="lead">Pellentesque et pulvinar orci. Suspendisse sed euismod purus. Pellentesque nunc ex, ultrices eu enim non, consectetur interdum nisl. Nam congue interdum mauris, sed ultrices augue lacinia in. Praesent turpis purus, faucibus in tempor vel, dictum ac eros.</p>
-            <p>Nulla quis felis et orci luctus semper sit amet id dui. Aenean ultricies lectus nunc, vel rhoncus odio sagittis eu. Sed at felis eu tortor mattis imperdiet et sed tortor. Nullam ac porttitor arcu. Vivamus tristique elit id tempor lacinia. Donec auctor at nibh eget tincidunt. Nulla facilisi. Nunc condimentum dictum mattis.</p>
-            
-            
-            <br><br>
-            <a class="btn btn-primary" href="page-typography.html">Learn more</a>
-          </div>
-
-          <div class="col-sm-12 col-md-6 hidden-xs hidden-sm">
-            <br>
-            <img class="center-block" src="http://localhost:8000/static/assets/img/how-it-works.png" alt="how it works">
-          </div>
-
-        </div>
-      </section>
-      <!-- END How it works -->
 
 
       <!-- Categories -->
@@ -280,7 +228,6 @@
       </section>  
 
     </main>
-    <!-- END Main container -->
     <%- include('partials/footer')%>
   </body>
 </html>
