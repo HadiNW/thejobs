@@ -31,9 +31,13 @@ class IndexController {
             if (!user) {
                 res.render('jobseeker/authentication/login', {errMsg: 'No user found'})
             } else {
-                res.send('ada user')
+                req.session.user = {
+                    email: user.email,
+                    id: user.id
+                }
+
+                res.redirect('/profile')
             }
-            res.send(user)
         })
         .catch((err) => {
             res.send(err)
