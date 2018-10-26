@@ -2,7 +2,7 @@
   "development": {
     "username": "hadinw",
     "password": null,
-    "database": "thejobs_development",
+    "database": "thejob",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+ <%- include('./partials/header')%>
+
+  <body class="nav-on-header smart-nav">
+
+    <!-- Navigation bar -->
+    <%-include('./partials/menu') %>
+      <header class="page-header bg-img size-lg" style="background-image: url(http://localhost:8000/static/assets/img/bg-banner2.jpg)">
+     
+    </header>
+
+   <section>
+       <div class="container">
+           <h1>Applications Data</h1>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Applicant</th>
+                        <th scope="col">headline</th>
+                        <th scope="col">address</th>
+                        <th scope="col">Summary</th>                          
+                        <th scope="col">status</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>    
+                    <% apps.forEach((app) => { %>                    
+                      <tr>
+                        <th scope="row"><%= app.id %></th>
+                        <td><%= app.Customer.name%></td> 
+                        <td><%= app.Customer.headline%></td>
+                        <td><%= app.Customer.location%></td>     
+                        <td><%= app.summary%></td>  
+                        <td><%= app.status%></td> 
+                        <td>
+                          <a href="/company/dashboard/jobs/<%= app.id%>/reject" class="btn btn-danger">reject</a>
+                          <a href="/company/dashboard/jobs/<%= app.id%>/interview" class="btn btn-info">interview</a>
+                          <a href="/company/dashboard/jobs/<%= app.id%>/employed" class="btn btn-success">employe</a>
+                        </td>
+                      </tr>
+                  <%  })%>   
+                    </tbody>
+            </table>
+       </div>
+   </section>
+   
+    <%- include('./partials/footer')%>
+  </body>
+</html>

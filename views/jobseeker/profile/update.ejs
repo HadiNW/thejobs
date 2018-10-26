@@ -6,36 +6,36 @@
 
     <!-- Navigation bar -->
     <%-include('../partials/menu') %>
-    <form action="#">
+   
 
         <!-- Page header -->
         <header class="page-header">
           <div class="container page-name">
-            <h1 class="text-center">Add your resume</h1>
+            <h1 class="text-center">update your profile</h1>
             <p class="lead text-center">Create your resume and put it online.</p>
           </div>
   
-          <div class="container">
-  
+          <div class="container">  
+           <form action="/profile/update" method="post" enctype="multipart/form-data" >
             <div class="row">
-              <div class="col-xs-12 col-sm-4">
+              <div class="col-xs-12 col-sm-4">       
                 <div class="form-group">
-                  <input type="file" class="dropify" data-default-file="http://localhost:8000/static/assets/img/avatar.jpg">
+                  <input required type="file" name="image" class="dropify" data-default-file="http://localhost:8000/static/uploads/photos/<%= user.photo%>">
                   <span class="help-block">Please choose a 4:6 profile picture.</span>
-                </div>
+                </div>        
               </div>
   
               <div class="col-xs-12 col-sm-8">
                 <div class="form-group">
-                  <input type="text" class="form-control input-lg" placeholder="Name">
+                  <input type="text" class="form-control input-lg" value="<%= customer.name%>" name="name">
                 </div>
                 
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Headline (e.g. Front-end developer)">
+                  <input type="text" class="form-control" value="<%= customer.headline%>" name="headline" placeholder="Headline (e.g. Front-end developer)">
                 </div>
   
                 <div class="form-group">
-                  <textarea class="form-control" rows="3" placeholder="Short description about you"></textarea>
+                  <textarea name="description" class="form-control" rows="3" placeholder="Short description about you"><%= customer.description%></textarea>
                 </div>
   
                 <hr class="hr-lg">
@@ -46,307 +46,51 @@
                   <div class="form-group col-xs-12 col-sm-6">
                     <div class="input-group input-group-sm">
                       <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                      <input type="text" class="form-control" placeholder="Location, e.g. Melon Park, CA">
+                      <input type="text" class="form-control" value="<%= customer.location%>" name="location" placeholder="Location, e.g. Jakarta">
                     </div>
                   </div>
   
-                  <div class="form-group col-xs-12 col-sm-6">
-                    <div class="input-group input-group-sm">
-                      <span class="input-group-addon"><i class="fa fa-globe"></i></span>
-                      <input type="text" class="form-control" placeholder="Website address">
-                    </div>
-                  </div>
+                
   
-                  <div class="form-group col-xs-12 col-sm-6">
-                    <div class="input-group input-group-sm">
-                      <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                      <input type="text" class="form-control" placeholder="Salary, e.g. 85">
-                      <span class="input-group-addon">Per hour</span>
-                    </div>
-                  </div>
   
                   <div class="form-group col-xs-12 col-sm-6">
                     <div class="input-group input-group-sm">
                       <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
-                      <input type="text" class="form-control" placeholder="Age">
-                      <span class="input-group-addon">Years old</span>
+                      <input type="date" class="form-control" name="birthdate"  placeholder="Age">
+                     
                     </div>
                   </div>
   
                   <div class="form-group col-xs-12 col-sm-6">
                     <div class="input-group input-group-sm">
                       <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                      <input type="text" class="form-control" placeholder="Phone number">
+                      <input type="text" class="form-control" value="<%= customer.phone %>" name="phone" placeholder="Phone number">
                     </div>
                   </div>
   
                   <div class="form-group col-xs-12 col-sm-6">
                     <div class="input-group input-group-sm">
                       <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                      <input type="text" class="form-control" placeholder="Email address">
+                      <input disabled type="text" class="form-control" value="<%= customer.email%>" name="email" placeholder="Email address">
                     </div>
                   </div>
-  
                 </div>
-  
-              
-  
               </div>
             </div>
   
             <div class="button-group">
-              <div class="action-buttons">
-  
+              <div class="action-buttons">  
                 <div class="upload-button">
-                  <button class="btn btn-block btn-gray">Choose a resume file</button>
-                  <input type="file">
+                  <button type="submit" class="btn btn-block btn-primary">Update</button>
                 </div>
-  
-                <div class="upload-button">
-                  <button class="btn btn-block btn-primary">Choose a cover image</button>
-                  <input id="cover_img_file" type="file">
-                </div>
-  
               </div>
             </div>
           </div>
+        </form>
         </header>
-        <!-- END Page header -->
+       
   
-  
-        <!-- Main container -->
-        <main>
-  
-  
-  
-          <!-- Education -->
-          <section class=" bg-alt">
-            <div class="container">
-  
-              <header class="section-header">
-                <span>Latest degrees</span>
-                <h2>Education</h2>
-              </header>
-              
-              <div class="row">
-  
-                <div class="col-xs-12">
-                  <div class="item-block">
-                    <div class="item-form">
-    
-                      <button class="btn btn-danger btn-float btn-remove"><i class="ti-close"></i></button>
-  
-                      <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                          <div class="form-group">
-                            <input type="file" class="dropify" data-default-file="assets/img/logo-default.png">
-                            <span class="help-block">Please choose a square logo</span>
-                          </div>
-                        </div>
-  
-                        <div class="col-xs-12 col-sm-8">
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Degree, e.g. Bachelor">
-                          </div>
-  
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Major, e.g. Computer Science">
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="School name, e.g. Massachusetts Institute of Technology">
-                          </div>
-  
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">Date from</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2012">
-                              <span class="input-group-addon">Date to</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2016">
-                            </div>
-                          </div>
-  
-                          <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Short description"></textarea>
-                          </div>
-                        </div>
-                      </div>
-  
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-xs-12 duplicateable-content">
-                  <div class="item-block">
-                    <div class="item-form">
-    
-                      <button class="btn btn-danger btn-float btn-remove"><i class="ti-close"></i></button>
-  
-                      <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                          <div class="form-group">
-                            <input type="file" class="dropify" data-default-file="assets/img/logo-default.png">
-                            <span class="help-block">Please choose a square logo</span>
-                          </div>
-                        </div>
-  
-                        <div class="col-xs-12 col-sm-8">
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Degree, e.g. Bachelor">
-                          </div>
-  
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Major, e.g. Computer Science">
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="School name, e.g. Massachusetts Institute of Technology">
-                          </div>
-  
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">Date from</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2012">
-                              <span class="input-group-addon">Date to</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2016">
-                            </div>
-                          </div>
-  
-                          <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Short description"></textarea>
-                          </div>
-                        </div>
-                      </div>
-  
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-xs-12 text-center">
-                  <br>
-                  <button class="btn btn-primary btn-duplicator">Add education</button>
-                </div>
-  
-  
-              </div>
-            </div>
-          </section>
-          <!-- END Education -->
-  
-  
-          <!-- Work Experience -->
-          <section>
-            <div class="container">
-              <header class="section-header">
-                <span>Past positions</span>
-                <h2>Work Experience</h2>
-              </header>
-              
-              <div class="row">
-  
-                <div class="col-xs-12">
-                  <div class="item-block">
-                    <div class="item-form">
-    
-                      <button class="btn btn-danger btn-float btn-remove"><i class="ti-close"></i></button>
-  
-                      <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                          <div class="form-group">
-                            <input type="file" class="dropify" data-default-file="assets/img/logo-default.png">
-                            <span class="help-block">Please choose a square logo</span>
-                          </div>
-                        </div>
-  
-                        <div class="col-xs-12 col-sm-8">
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Company name">
-                          </div>
-  
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Position, e.g. UI/UX Researcher">
-                          </div>
-  
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">Date from</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2012">
-                              <span class="input-group-addon">Date to</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2016">
-                            </div>
-                          </div>
-  
-                        </div>
-  
-                        <div class="col-xs-12">
-                          <div class="form-group">
-                            <textarea class="summernote-editor"></textarea>
-                          </div>
-                        </div>
-                      </div>
-  
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-xs-12 duplicateable-content">
-                  <div class="item-block">
-                    <div class="item-form">
-    
-                      <button class="btn btn-danger btn-float btn-remove"><i class="ti-close"></i></button>
-  
-                      <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                          <div class="form-group">
-                            <input type="file" class="dropify" data-default-file="assets/img/logo-default.png">
-                            <span class="help-block">Please choose a square logo</span>
-                          </div>
-                        </div>
-  
-                        <div class="col-xs-12 col-sm-8">
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Company name">
-                          </div>
-  
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Position, e.g. UI/UX Researcher">
-                          </div>
-  
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">Date from</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2012">
-                              <span class="input-group-addon">Date to</span>
-                              <input type="text" class="form-control" placeholder="e.g. 2016">
-                            </div>
-                          </div>
-  
-                        </div>
-  
-                        <div class="col-xs-12">
-                          <div class="form-group">
-                            <textarea class="summernote-editor"></textarea>
-                          </div>
-                        </div>
-                      </div>
-  
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-xs-12 text-center">
-                  <br>
-                  <button class="btn btn-primary btn-duplicator">Add experience</button>
-                </div>
-  
-  
-              </div>
-  
-            </div>
-          </section>
-          <!-- END Work Experience -->
-        </main>
-        <!-- END Main container -->
-  
-      </form>
+
     <%- include('../partials/footer')%>
   </body>
 </html>

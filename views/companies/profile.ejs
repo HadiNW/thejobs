@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+        <%- include('partials/header')%>
+
+  <body class="nav-on-header smart-nav">
+    <%-include('partials/menu') %>
+
+
+
+    <!-- Page header -->
+    <header class="page-header bg-img size-lg" style="background-image: url(assets/img/bg-banner2.jpg)">
+      <div class="container">
+        <div class="header-detail">
+          <img class="logo" src="assets/img/logo-google.jpg" alt="">
+          <div class="hgroup">
+            <h1><%= company.name%></h1>
+            <h3><%= company.headline%></h3>
+          </div>
+          <hr>
+          <p class="lead"><%= company.description%></p>
+
+          <div class="button-group">
+          
+            <div class="action-buttons">
+              <a class="btn btn-info" href="/company/dashboard/profile/update">update</a>
+             
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+  
+    <main>
+
+
+     
+
+      <!-- Open positions -->
+      <section id="open-positions" class="bg-alt">
+        <div class="container">
+          <header class="section-header">
+            <h2>Open positions</h2>
+          </header>
+          
+          <div class="row">
+
+           
+
+
+         
+
+         
+
+
+
+
+            <!-- Job item -->
+            <div class="col-xs-12">
+              <a class="item-block" href="job-detail.html">
+                <header>
+                  <img src="assets/img/logo-google.jpg" alt="">
+                  <div class="hgroup">
+                    <h4>Sr. SQL Server Developer</h4>
+                    <h5>Google <span class="label label-success">Remote</span></h5>
+                  </div>
+                  <time datetime="2016-03-10 20:00">Feb 16, 2016</time>
+                </header>
+
+                <div class="item-body">
+                  <p>Understand and model complex business requirements into database schemas and work with existing databases in SQL and NOSQL data stores. Develop high performance stored procedures, triggers and other database level code to provide data services to other teams.</p>
+                </div>
+
+                <footer>
+                  <ul class="details cols-3">
+                    <li>
+                      <i class="fa fa-map-marker"></i>
+                      <span>Palo Alto, CA</span>
+                    </li>
+
+                    <li>
+                      <i class="fa fa-money"></i>
+                      <span>$125,000 - $140,000 / year</span>
+                    </li>
+
+                    <li>
+                      <i class="fa fa-certificate"></i>
+                      <span>Ph.D. or Master</span>
+                    </li>
+                  </ul>
+                </footer>
+              </a>
+            </div>
+            <!-- END Job item -->
+
+          </div>
+
+        </div>
+      </section>
+      <!-- END Open positions -->
+
+
+    </main>
+    <!-- END Main container -->
+
+    <%- include('partials/footer')%>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <%- include('../partials/header')%>
+
+  <body class="nav-on-header smart-nav">
+
+    <!-- Navigation bar -->
+    <%-include('../partials/menu') %>
+      <header class="page-header bg-img size-lg" style="background-image: url(http://localhost:8000/static/assets/img/bg-banner2.jpg)">
+     
+    </header>
+
+   <section>
+       <div class="container">
+           <h1>List Apply</h1>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">position</th>
+                        <th scope="col">location</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">status</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>    
+                    <% data.forEach((dat) => { %>
+                    
+                      <tr>
+                        <th scope="row"><%= ''%></th>
+                        <td><%= dat.Job.name%></td>
+                        <td><%= dat.Job.location%></td>     
+                        <td><%= dat.Job.Company.name%></td> 
+                        <td><%= dat.status%></td> 
+                      
+                      </tr>
+                  <%  })%>   
+                    </tbody>
+            </table>
+       </div>
+   </section>
+   
+    <%- include('../partials/footer')%>
+  </body>
+</html>

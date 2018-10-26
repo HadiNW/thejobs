@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+ <%- include('partials/header')%>
+
+  <body class="nav-on-header smart-nav">
+
+    <%-include('partials/menu') %>
+    <header class="page-header bg-img size-lg" style="background-image: url(assets/img/bg-banner2.jpg)">
+       
+    </header>
+    <main>
+
+              
+      
+            <!-- Four types -->
+            <section class="bg-alt">
+              <div class="container">
+                <header class="section-header">
+                 
+                  <h2>Dashboard</h2>
+                </header>
+      
+      
+                <ul class="pricing cols-4">
+                  <li>
+                    <h6>Applicants</h6>
+                    <div class="price">
+                     <%= data[0].total%>
+                      <span>&nbsp;</span>
+                    </div>
+                    <hr>
+                  </li>
+      
+                  <li>
+                    <h6>Pending Application Review</h6>
+                    <div class="price">
+                      <%= data[0].pending%>
+                  <hr>
+                  </li>
+
+
+                  <li>
+                    <h6>Rejected</h6>
+                    <div class="price">
+                      <%= data[0].rejected%>
+                  <hr>
+                  </li>
+      
+                  <li>
+                    <h6>Interview</h6>
+                    <div class="price">
+                      <%= data[0].interview%>
+                    
+                    </div>
+                    <hr>
+                  
+                  </li>
+      
+                  <li>
+                    <h6>Employed</h6>
+                    <div class="price">
+                      <%= data[0].employed%>
+                     
+                    </div>
+                    <hr>
+                   
+                   
+                  </li>
+                </ul>
+      
+              </div>
+            </section>
+            <!-- END Four types -->
+      
+      
+          </main>
+    <%- include('partials/footer')%>
+  </body>
+</html>

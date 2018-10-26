@@ -1,33 +1,42 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('JobSeekerEducations', {
+    return queryInterface.createTable('Customers', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      degree: {
+      name: {
         type: Sequelize.STRING
       },
-      university: {
+      headline: {
         type: Sequelize.STRING
-      },
-      major: {
-        type: Sequelize.STRING
-      },
-      dateFrom: {
-        type: Sequelize.DATE
-      },
-      dateTo: {
-        type: Sequelize.DATE
       },
       description: {
         type: Sequelize.STRING
       },
-      JobSeekerId: {
-        type: Sequelize.INTEGER
+      location: {
+        type: Sequelize.STRING
+      },
+      phone: {
+        type: Sequelize.STRING
+      },
+      birthdate: {
+        type: Sequelize.STRING
+      },
+      email: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      cv: {
+        type: Sequelize.STRING
+      },
+      academic: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +49,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('JobSeekerEducations');
+    return queryInterface.dropTable('Customers');
   }
 };

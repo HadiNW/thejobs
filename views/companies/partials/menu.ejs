@@ -15,19 +15,19 @@
 
       <!-- User account -->
       <div class="pull-right user-login">
-        <% if (user){ %>
+        <% if (company){ %>
           <ul class="nav-menu">
             <li>
-              <a href="#"><%= user.name %></a>
+              <a href="#"><%= company.name %></a>
               <ul>
-                <li><a href="/profile">Profile</a></li>
+                <li><a href="/company/dashboard/profile">Profile</a></li>
                 <li><a href="/logout">Logout</a></li>
               </ul>
             </li>
           </ul>
           &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;
        <% } else { %>
-        <a style="font-size: 15px"  href="/login">Login</a>  &nbsp; &nbsp;  or &nbsp; &nbsp; <a style="font-size: 15px" href="/register">register</a>
+        <a style="font-size: 15px"  href="/company/login">Login</a>  &nbsp; &nbsp;  or &nbsp; &nbsp; <a style="font-size: 15px" href="/company/register">register</a>
         &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;     &nbsp;
  
         <div class="pull-right user-login">
@@ -41,22 +41,19 @@
       <!-- Navigation menu -->
       <ul class="nav-menu">
         <li>
-          <a class="active" href="/">Home</a>
+          <a class="active" href="/company/dashboard">Home</a>
         </li>
         <li>
-          <a href="/jobs">Browse Jobs</a>
+          <a href="/company/dashboard/jobs/post">post a jobs</a>
         </li>
-        <% if (user){ %>
-        <li>
-          <a href=" /jobs/lists">Application Lists</a>
-        </li>
-        <% }  %>
-       
         <!-- <li>
           <a href="/profile">Profile</a>
         </li> -->
-       
+        <li>
+          <a href="/company/dashboard/jobs/">Job Lists</a>
+        </li>
       
+      </ul>
       <!-- END Navigation menu -->
 
     </div>
